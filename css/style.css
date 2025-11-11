@@ -15,6 +15,14 @@ body {
   /* width: 1440px; ve height: 72px; figmada görünmesine rağmen container içinde olduğu için kaldırdım */
 }
 
+/* Ödev 4 C6 maddesi */
+.header a,
+.nav a,
+.address a {
+  /* Bu kuralı ekleyin veya mevcutsa güncelleyin */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .header .span-1 {
   color: rgba(77, 90, 229, 1); /* C11 */
 }
@@ -32,6 +40,45 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+/*Ana navigasyonda, ::after sözde öğesi kullanılarak, geçerli sayfanın (kullanıcının o anda bulunduğu yer) bağlantısının altı çizilmelidir. */
+
+.nav a {
+  /* ... diğer stiller ... */
+  position: relative; /* ::after için konumlandırma bağlamı */
+  display: block; /* Linkin tam alan kaplamasını sağlamak için */
+
+  /* C3 rengine geçişi ekle */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 44px; /* Çizgiyi linkin hemen altına konumlandırır */
+
+  /* Çizgi stili */
+  display: block;
+  width: 0; /* Başlangıçta genişlik 0 olduğu için görünmez */
+  height: 4px;
+  background-color: #404bbf; /* Ocean rengi (C3) */
+  border-radius: 2px;
+
+  /* Geçiş efekti: Sadece genişlik değişimini akıcı yapsın */
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav a:hover,
+.nav a:focus {
+  color: rgba(64, 75, 191, 1); /* Ocean rengi */
+}
+
+/* Hover/Focus'ta alt çizgiyi ortaya çıkar (genişliği %100 yap) */
+.nav a:hover::after,
+.nav a:focus::after {
+  width: 100%; /* Genişliği %100 yaparak çizgiyi görünür yap */
 }
 
 /*Header*/
@@ -209,6 +256,7 @@ h3 {
   line-height: 1.2; /* C10 */
   color: #2e2f42; /* C11 */
   margin-bottom: 8px; /* başlık ile paragraf arasına boşluk */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); /* Ödev 4 C6 */
 }
 
 .team-li h3:hover,
@@ -252,6 +300,17 @@ h3 {
   border-radius: 4px;
   border: 1px solid #e7e9fc;
   overflow: hidden; /* görsel taşmasın */
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: rgba(231, 233, 252, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); /* Ödev 4 C6 */
+}
+
+.portfolio-li:hover,
+.portfolio-li:focus {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-li img {
@@ -287,6 +346,8 @@ h3 {
   font-size: 16px;
   letter-spacing: 0.04em;
   padding: 16px 32px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -392,4 +453,118 @@ ul {
   width: 64px;
   height: 64px;
   /* İkonun içindeki path rengi SVG dosyanızda #4D5AE5 olarak ayarlanmıştır. */
+}
+
+/* Takım Üyeleri - Sosyal Medya İkonları Kapsayıcısı */
+.team-social-list {
+  display: flex; /* İkon kutularını yan yana getir */
+  justify-content: center; /* Ortala */
+  gap: 24px; /* İkon kutuları arasına 24px boşluk bırak */
+  margin-bottom: 24px; /* Kartın alt kenarına olan boşluğu 32px'ten 24px'e düşürdüm */
+}
+
+/* İkon Kutusu (Mevcut class isminiz) */
+.team-icon-box {
+  /* Bu kısmı orijinal stilinize göre güncelledim */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(77, 90, 229, 1); /* Iris rengi */
+  border-radius: 50%; /* Yuvarlak şekil */
+  /* margin: 0 auto; kuralını kaldırdık, çünkü artık flex container ortalıyor. */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* İkonun Kendisi */
+.team-icon {
+  width: 16px;
+  height: 16px;
+  fill: #f4f4fd; /* İkonun rengini açık gri yap */
+}
+
+/* EK DÜZELTME: team-li p'deki alt boşluğu azaltalım (ikon listesinin üzerindeki boşluk) */
+.team-li p {
+  color: #434455;
+  margin-bottom: 8px; /* Unvan ile sosyal ikon listesi arasına 8px boşluk */
+}
+
+/* H1 OLDUĞU YERDE ARKA PLAN FOTOĞRAFI KULLANIMI */
+.hero {
+  /* Renk bindirmesini (overlay) ve resmi tek bir kuralda tanımlar */
+  background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url("../images/people-office\ 1.jpg"); /* Arka plan resmi */
+
+  /* Konumlandırma ve boyutlandırma kuralları  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Footer da sosyal ikonlar için */
+/* --- Footer İkon Stilleri Başlangıcı --- */
+
+/* Altbilgi Ana Kapsayıcısı */
+.footer .container {
+  display: flex; /* İçerikleri yan yana hizala */
+  gap: 120px; /* Logo/Metin ve Sosyal Medya grupları arasına boşluk */
+}
+
+/* 1. Kapsayıcı: Logo ve Metin (Mevcut stiller zaten var) */
+.footer-info {
+  /* Logo ve paragraf bu kapsayıcı içinde */
+  width: 264px; /* Figma genişlik değeri */
+}
+
+/* 2. Kapsayıcı: Sosyal Medya */
+.footer-social {
+  width: 40px; /* Sosyal medya ikon kutularının toplam genişliği */
+  height: 40px; /* Sosyal medya ikon kutularının toplam yüksekliği */
+}
+
+/* Sosyal Medya Başlığı */
+.footer-social .social-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 1); /* Beyaz renk */
+  margin-bottom: 16px; /* Başlık ile ikon listesi arasına boşluk */
+}
+
+/* Sosyal Medya İkon Listesi */
+.footer-social .social-list {
+  display: flex;
+  gap: 16px; /* İkonlar arasına 16px boşluk */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sosyal Medya Bağlantı Kutusu/Link */
+.footer-social .social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(77, 90, 229, 1); /* Iris rengi */
+  border-radius: 50%;
+  /* C6 Kuralı: Geçişleri ekle */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* C5 Kuralı: Hover/Focus efekti (Maviden Yeşile) */
+.footer-social .social-link:hover,
+.footer-social .social-link:focus {
+  background-color: #31d0aa; /* Ocean'dan farklı, hafif yeşilimsi renk (Figma kuralı) */
+}
+
+/* İkonun Kendisi */
+.footer-social .social-icon {
+  width: 24px; /* SVG boyutu */
+  height: 24px;
+  fill: #f4f4fd; /* Açık Gri dolgu rengi (Simgeler için C11) */
 }
