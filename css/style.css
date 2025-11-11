@@ -373,3 +373,23 @@ ul {
   width: 1158px;
   margin: 0 auto;
 }
+
+/*İkonlar*/
+.strategy-icon-box {
+  display: flex;
+  /* İkonu hem dikey hem de yatay olarak ortalar */
+  justify-content: center;
+  align-items: center;
+
+  /* İstenen boyut ve renkler */
+  height: 112px;
+  background-color: #f4f4fd; /* Açık Gri Arka Plan */
+  border-radius: 4px;
+  margin-bottom: 8px; /* İkon kutusu ile başlık (h3) arasındaki boşluk */
+}
+
+.strategy-icon {
+  width: 64px;
+  height: 64px;
+  /* İkonun içindeki path rengi SVG dosyanızda #4D5AE5 olarak ayarlanmıştır. */
+}
