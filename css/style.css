@@ -1,0 +1,375 @@
+html {
+  font-size: 16px; /* C1 */
+}
+/*Temel*/
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif; /* C5, C6 */
+  line-height: 1.5; /* C10 */
+}
+
+/* B13 maddesi */
+.header {
+  border-bottom: 1px solid #e7e9fc; /* B13 */
+  padding-top: 24px; /*üst boşluk figmada top 24 olarak görünüyor*/
+  padding-bottom: 24px; /*alt boşluk figmada bottom 24 olarak görünüyor*/
+  /* width: 1440px; ve height: 72px; figmada görünmesine rağmen container içinde olduğu için kaldırdım */
+}
+
+.header .span-1 {
+  color: rgba(77, 90, 229, 1); /* C11 */
+}
+
+/* B10 maddesi */
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-ul {
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*Header*/
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.17;
+  color: #2e2f42;
+  text-decoration: none;
+}
+
+.header a:hover,
+.header a:focus {
+  color: #434455; /* C3 */
+  outline: none;
+}
+
+/*Navigasyon*/
+.nav a {
+  color: rgba(46, 47, 66, 1);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav a:hover,
+.nav a:focus {
+  color: #404bbf; /* C3 */
+}
+
+/*Adres*/
+
+/*B10 maddesi*/
+.address {
+  display: flex;
+  gap: 40px;
+  font-style: normal; /* <address> etiketi italik olmasın */
+}
+.address a {
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(67, 68, 85, 1);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.address a:hover,
+.address a:focus {
+  color: #404bbf; /* C3 */
+}
+
+/*Hero*/
+.hero {
+  background-color: #2e2f42; /* C11 */
+  height: 600px;
+  display: flex;
+  align-items: center;
+  text-align: center; /* h1 ve buton ortalancak*/
+  padding-top: 188px; /*üst boşluk figmada top 188 olarak görünüyor*/
+  padding-bottom: 188px; /*alt boşluk figmada bottom 188 olarak görünüyor*/
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-weight: 700; /* C12 */
+  font-style: bold;
+  line-height: 1.07142857143; /* C10 */
+  color: #ffffff; /* C11 */
+  font-size: 56px;
+  font-family: "Roboto", sans-serif;
+  width: 496px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 48px; /* başlık ile buton arasına boşluk */
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.111111111; /* C10 */
+  color: #2e2f42;
+}
+
+.strategy li p,
+.portfolio li p,
+.team-li p,
+.footer p {
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 20px;
+  color: #2e2f42;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+/*Strateji*/
+.strategy {
+  padding-top: 120px; /*üst boşluk figmada top 120 olarak görünüyor*/
+  padding-bottom: 120px; /*alt boşluk figmada bottom 120 olarak görünüyor*/
+}
+
+.strategy-ul {
+  display: flex;
+  justify-content: space-between; /* aralarında eşit boşluk */
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.strategy-li {
+  flex-basis: calc(
+    (100% - 72px) / 4
+  ); /* 4 eşit sütun için genişlik ayarı  gap 8 px 3 boşluk*/
+}
+
+.strategy p {
+  line-height: 1.5;
+}
+
+/*Takım*/
+.team {
+  background-color: #f4f4fd; /* C11 */
+  padding-top: 120px; /*üst boşluk figmada top 120 olarak görünüyor*/
+  padding-bottom: 120px; /*alt boşluk figmada bottom 120 olarak görünüyor*/
+  text-align: center;
+}
+
+.team-ul {
+  display: flex;
+  justify-content: space-between; /* aralarında eşit boşluk */
+  gap: 24px; /* kartlar arası boşluk düzeltildi 32&24 */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-li {
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  flex-basis: calc((100% - 96px) / 4); /* 4 kart için (3 * 32px boşluk) */
+  overflow: hidden; /* görsel taşmasın */
+}
+
+.team-li img {
+  display: block; /* img etiketinin altındaki boşluğu kaldırmak için */
+  width: 100%; /* görselin kapsayıcı genişliğine uyum sağlaması için */
+  height: auto; /* orantılı olarak yükseklik ayarı */
+  margin-bottom: 32px;
+}
+
+.team h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: rgba(46, 47, 66, 1);
+  margin-bottom: 72px; /* başlık ile kartlar arasına boşluk  figmada görünen figmada bu mesafeyi ölçmek için kartı seçip alt tuşuna basıyorum ve neyle ölçmek istiyorsam orayı ölçüyorum*/
+}
+
+.team-li h3 {
+  font-weight: 500; /* C12 */
+  line-height: 1.2; /* C10 */
+  color: #2e2f42; /* C11 */
+  margin-bottom: 8px; /* başlık ile paragraf arasına boşluk */
+}
+
+.team-li h3:hover,
+.team-li h3:focus {
+  color: #4d5ae5; /* C4 */
+}
+
+.team-li p {
+  color: #434455; /* C11 */
+  margin-bottom: 32px; /* paragraf ile kart altı arasına boşluk */
+}
+
+/*Portfolio*/
+
+.portfolio {
+  padding-top: 120px; /*üst boşluk figmada top 120 olarak görünüyor*/
+  padding-bottom: 120px; /*alt boşluk figmada bottom 120 olarak görünüyor*/
+}
+
+.portfolio h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: #2e2f42;
+  margin-bottom: 72px;
+}
+
+.portfolio-ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px; /* satır arası 48px, sütun arası 24px */
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-li {
+  width: calc((100% - 48px) / 3); /* 3 sütun için (2 * 24px boşluk) */
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #e7e9fc;
+  overflow: hidden; /* görsel taşmasın */
+}
+
+.portfolio-li img {
+  width: 100%; /* görselin kapsayıcı genişliğine uyum sağlaması için */
+  display: block; /* img etiketinin altındaki boşluğu kaldırmak için */
+  height: auto; /* orantılı olarak yükseklik ayarı */
+}
+
+.portfolio-li h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2e2f42;
+  margin: 32px 16px 8px;
+}
+
+.portfolio-li p {
+  color: #434455;
+  font-size: 16px;
+  margin: 0 16px 32px;
+}
+
+/*Button*/
+.hero-button {
+  cursor: pointer; /* C13 */
+  font-family: inherit;
+  color: #ffffff;
+  background-color: rgba(77, 90, 229, 1); /* C11 */
+  border: none;
+  border-radius: 4px;
+  line-height: 1.5; /* C10 */
+  font-weight: 500;
+  gap: 10px;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  padding: 16px 32px;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background-color: #404bbf;
+  box-shadow: 0px 4px 4px 0px rgba(64, 75, 191, 1);
+}
+
+/*Footer*/
+.footer {
+  background-color: #2e2f42; /* C11 */
+  color: #ffffff; /* C11 */
+  padding-top: 120px; /*üst boşluk figmada top 120 olarak görünüyor*/
+  padding-bottom: 120px; /*alt boşluk figmada bottom 120 olarak görünüyor*/
+}
+
+.footer .container {
+  width: 1158px;
+  margin: 0 auto;
+}
+
+.footer .logo {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4d5ae5; /* web kısmı */
+  font-family: "Raleway", sans-serif;
+}
+
+.footer .span-2 {
+  color: #f4f4fd; /* STUDIO kısmı */
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer p {
+  color: #f4f4fd; /* açık gri yazı */
+  font-size: 16px;
+  line-height: 1.5;
+  width: 264px;
+  margin: 0;
+}
+
+.strategy li,
+.portfolio li,
+.team-li {
+  list-style: none; /* C9 */
+}
+
+/*sayfada raleway fontu 2 defa kullanıldığı için onları kullanılan yere verdim. Geri kalan roboto kullandı.*/
+
+/*belirlenen etiketler için global sfırılama kısmı B1 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* B3,B4 ve B15 de istenen paddig üst ve alt değeri */
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  width: 100%;
+}
+
+/* B6,B8 ve B9 de istenen container kısmı */
+.container {
+  width: 1158px;
+  margin: 0 auto;
+}
